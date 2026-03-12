@@ -67,7 +67,7 @@ jobs:
       - name: Build Electron app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_OPTIONS: "--max_old_space_size=16384"
+          NODE_OPTIONS: "--max_old_space_size=8192"
         run: |
           if [ "$RUNNER_OS" == "Windows" ]; then
             pnpm run electron:build:win
